@@ -11,8 +11,26 @@
 |
 */
 
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+// Route::get('/login', function () {
+//     return view('admin.login');
+// });
+
+
+// Route::get('/admin', function () {
+//     return view('admin.index');
+// });
+
+// Route::get('/test','TestController@index');
+
+
+
+// Route::get('/home', 'HomeController@index');
 Route::get('/', function () {
     return view('welcome');
 });
-
-Route::get('/test','TestController@index');
+         //   Route::get('/home', 'HomeController@index')->name('home');
+            Route::get('/admin', 'AdminController@index');
+            Route::auth();
