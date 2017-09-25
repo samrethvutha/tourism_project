@@ -15,4 +15,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/test','TestController@index');
+Route::auth();
+Route::get('/home', 'HomeController@index');
+Route::get('/admin', 'AdminController@index');
