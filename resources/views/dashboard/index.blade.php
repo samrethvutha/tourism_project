@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('dashboard_layout.app')
 
 @section('sidebar')
   @parent
