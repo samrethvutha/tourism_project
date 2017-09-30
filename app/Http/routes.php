@@ -11,8 +11,18 @@
 |
 */
 
+Route::get('/Application', function () {
+    return view('index');
+});
 Route::get('/', function () {
     return view('welcome');
 });
+Route::auth();
 
-Route::get('/test','TestController@index');
+Route::get('/home', 'HomeController@index');
+Route::get('/dashboard', 'AdminController@index');
+Route::group(['prefix' => 'api'], function()
+{
+    Route::resource('authenticate', 'AuthenticateController', ['only' => ['index']]);
+    Route::post('authenticate', 'AuthenticateController@authenticate');
+});
